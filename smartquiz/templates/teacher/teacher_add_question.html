@@ -13,11 +13,20 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   a:link {
         text-decoration: none;
+        text-underline-position: under;
+      }
+      h2{
+        margin-top:50px;
+        margin-bottom:50px;
+        text decoration: underline;
+        text-underline-position: under;
+        animation: colorchange 4s infinite;
+        animation-direction: alternate;
       }
     
   </style>
 </head>
-<h2 style="text-align:center; color:blue;">ADD QUESTION</h2>
+<h2 style="text-align:center; color:green;">ADD QUESTION</h2>
 <form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
     {%csrf_token%}
     <div class="form-group">
@@ -26,22 +35,22 @@
         <br>
 
       <label for="question">Question</label>
-      {% render_field questionForm.question|attr:'required:true' class="form-control" placeholder="What is the currency of India ?" %}
+      {% render_field questionForm.question|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="question_number">Marks</label>
-      {% render_field questionForm.marks|attr:'required:true' class="form-control" placeholder="10" %}
+      {% render_field questionForm.marks|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="option1">Option 1</label>
-      {% render_field questionForm.option1|attr:'required:true' class="form-control" placeholder="Rupees" %}
+      {% render_field questionForm.option1|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="option2">Option 2</label>
-      {% render_field questionForm.option2|attr:'required:true' class="form-control" placeholder="Dollar" %}
+      {% render_field questionForm.option2|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="option3">Option 3</label>
-      {% render_field questionForm.option3|attr:'required:true' class="form-control" placeholder="Taka" %}
+      {% render_field questionForm.option3|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="option4">Option 4</label>
-      {% render_field questionForm.option4|attr:'required:true' class="form-control" placeholder="Euro" %}
+      {% render_field questionForm.option4|attr:'required:true' class="form-control" placeholder="" %}
         <br>
       <label for="answer">Answer</label>
       {% render_field questionForm.answer|attr:'required:true' class="form-control" %}
